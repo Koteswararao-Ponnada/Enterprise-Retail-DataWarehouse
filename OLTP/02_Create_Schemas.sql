@@ -60,5 +60,12 @@ IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'Audit')
     EXEC('CREATE SCHEMA Audit');
 GO
 
+------------------------------------------------------------
+-- Stage Schema
+------------------------------------------------------------
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'Stage')
+    EXEC('CREATE SCHEMA Stage');
+GO
+
 PRINT 'All Schemas Created Successfully.';
 GO
