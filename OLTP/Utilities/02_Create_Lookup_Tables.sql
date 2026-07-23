@@ -6,18 +6,10 @@ GO
 Table : FirstNames
 ==============================================================*/
 
-IF OBJECT_ID('Utility.FirstNames','U') IS NOT NULL
-    DROP TABLE Utility.FirstNames;
+TRUNCATE TABLE Utility.FirstNames;
 GO
 
-CREATE TABLE Utility.FirstNames
-(
-    FirstNameID INT IDENTITY(1,1) PRIMARY KEY,
-    FirstName NVARCHAR(50) NOT NULL
-);
-GO
-
-INSERT INTO Utility.FirstNames(FirstName)
+INSERT INTO Utility.FirstNames (FirstName)
 VALUES
 ('Aarav'),
 ('Vivaan'),
@@ -29,16 +21,96 @@ VALUES
 ('Kiran'),
 ('Rohit'),
 ('Vijay'),
-('Priya'),
+('Ajay'),
+('Akash'),
+('Amit'),
+('Anil'),
+('Ankit'),
+('Ashwin'),
+('Bharath'),
+('Chaitanya'),
+('Deepak'),
+('Ganesh'),
+('Harish'),
+('Karthik'),
+('Lokesh'),
+('Manoj'),
+('Mohan'),
+('Naveen'),
+('Nikhil'),
+('Pradeep'),
+('Rakesh'),
+('Ravi'),
+('Sandeep'),
+('Santosh'),
+('Srinivas'),
+('Suresh'),
+('Tarun'),
+('Uday'),
+('Varun'),
+('Venkat'),
+('Vikram'),
+('Yash'),
+('Abhishek'),
+('Gopal'),
+('Dinesh'),
+('Mahesh'),
+('Naresh'),
+('Pavan'),
+('Raghu'),
+('Ramesh'),
+('Srikanth'),
+('Teja'),
 ('Ananya'),
+('Priya'),
 ('Sneha'),
 ('Pooja'),
 ('Divya'),
 ('Neha'),
 ('Kavya'),
-('Harsha'),
-('Akash'),
-('Nikhil');
+('Aishwarya'),
+('Bhavana'),
+('Deepika'),
+('Harini'),
+('Keerthi'),
+('Lakshmi'),
+('Meghana'),
+('Nandini'),
+('Pallavi'),
+('Preethi'),
+('Radhika'),
+('Sanjana'),
+('Shreya'),
+('Swathi'),
+('Vaishnavi'),
+('Akshara'),
+('Amrutha'),
+('Anusha'),
+('Aparna'),
+('Archana'),
+('Bhavya'),
+('Chandana'),
+('Harika'),
+('Ishita'),
+('Jyothi'),
+('Komal'),
+('Madhavi'),
+('Monika'),
+('Navya'),
+('Nikita'),
+('Pranathi'),
+('Reshma'),
+('Sowmya'),
+('Sravani'),
+('Sushma'),
+('Trisha'),
+('Uma'),
+('Varsha'),
+('Vidya'),
+('Yamini'),
+('Zoya'),
+('Tanvi'),
+('Mansi');
 GO
 
 --create last names
@@ -46,18 +118,10 @@ GO
 Table : LastNames
 ==============================================================*/
 
-IF OBJECT_ID('Utility.LastNames','U') IS NOT NULL
-    DROP TABLE Utility.LastNames;
+TRUNCATE TABLE Utility.LastNames;
 GO
 
-CREATE TABLE Utility.LastNames
-(
-    LastNameID INT IDENTITY(1,1) PRIMARY KEY,
-    LastName NVARCHAR(50)
-);
-GO
-
-INSERT INTO Utility.LastNames(LastName)
+INSERT INTO Utility.LastNames (LastName)
 VALUES
 ('Sharma'),
 ('Reddy'),
@@ -77,7 +141,86 @@ VALUES
 ('Kapoor'),
 ('Mehta'),
 ('Agarwal'),
+('Nair'),
 ('Ponnada'),
-('Nair');
+('Babu'),
+('Rana'),
+('Saxena'),
+('Malhotra'),
+('Kulkarni'),
+('Shukla'),
+('Tripathi'),
+('Dubey'),
+('Pandey'),
+('Bhatt'),
+('Shetty'),
+('Pillai'),
+('Menon'),
+('George'),
+('Thomas'),
+('Mathew'),
+('Fernandes'),
+('D'Souza'),
+('Prasad'),
+('Murthy'),
+('Raju'),
+('Chandra'),
+('Varma'),
+('Rathore'),
+('Chauhan'),
+('Bhat'),
+('Kuldeep'),
+('Desai'),
+('Gowda'),
+('Kamble'),
+('Jain'),
+('Soni'),
+('Khanna'),
+('Bose'),
+('Roy'),
+('Sen'),
+('Paul'),
+('Banerjee'),
+('Mukherjee'),
+('Ghosh'),
+('Chakraborty'),
+('Mohanty'),
+('Behera'),
+('Swain'),
+('Rout'),
+('Panda'),
+('Parida'),
+('Nayak'),
+('Acharya'),
+('Sahoo'),
+('Tiwari'),
+('Chawla'),
+('Bansal'),
+('Arora'),
+('Kohli'),
+('Gill'),
+('Sandhu'),
+('Dhillon'),
+('Sidhu'),
+('Kaur'),
+('Ahuja'),
+('Bakshi'),
+('Seth'),
+('Lal'),
+('Srinivas'),
+('Venkatesh'),
+('Subramanian'),
+('Narayanan'),
+('Balaji'),
+('Krishnan'),
+('Ramakrishnan'),
+('Perumal'),
+('Selvam'),
+('Kannan'),
+('Moorthy'),
+('Ranganathan'),
+('Anand'),
+('Bhaskar'),
+('Prabhakar');
 GO
 
