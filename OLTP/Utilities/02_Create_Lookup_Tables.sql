@@ -160,7 +160,7 @@ VALUES
 ('Thomas'),
 ('Mathew'),
 ('Fernandes'),
-('D'Souza'),
+('D''Souza'),
 ('Prasad'),
 ('Murthy'),
 ('Raju'),
@@ -221,6 +221,7 @@ VALUES
 ('Ranganathan'),
 ('Anand'),
 ('Bhaskar'),
-('Prabhakar');
+('Prabhakar'),
+('Rajput');
 GO
 
