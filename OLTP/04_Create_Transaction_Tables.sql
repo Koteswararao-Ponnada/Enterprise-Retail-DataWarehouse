@@ -17,7 +17,7 @@ CREATE TABLE Sales.Orders
 
     OrderDate DATETIME2 NOT NULL DEFAULT GETDATE(),
 
-    OrderStatus NVARCHAR(30) NOT NULL,
+    OrderStatusID INT NOT NULL,
 
     TotalAmount DECIMAL(18,2) NOT NULL,
 
@@ -69,9 +69,9 @@ CREATE TABLE Sales.Payments
 
     PaymentDate DATETIME2 NOT NULL DEFAULT GETDATE(),
 
-    PaymentMethod NVARCHAR(50) NOT NULL,
+    PaymentMethodID INT NOT NULL,
 
-    PaymentStatus NVARCHAR(30) NOT NULL,
+    PaymentStatusID INT NOT NULL,
 
     Amount DECIMAL(18,2) NOT NULL,
 
@@ -100,7 +100,7 @@ CREATE TABLE Sales.Shipments
 
     TrackingNumber NVARCHAR(100),
 
-    ShipmentStatus NVARCHAR(30)
+    ShipmentStatusID INT NOT NULL
 );
 GO
 
@@ -119,10 +119,13 @@ CREATE TABLE Sales.Returns
 
     ReturnDate DATETIME2 NOT NULL DEFAULT GETDATE(),
 
-    ReturnReason NVARCHAR(300),
+    ReturnReasonID INT NOT NULL,
 
     RefundAmount DECIMAL(18,2),
 
-    ReturnStatus NVARCHAR(30)
+    ReturnStatusID INT NOT NULL
+    
+
+
 );
 GO
