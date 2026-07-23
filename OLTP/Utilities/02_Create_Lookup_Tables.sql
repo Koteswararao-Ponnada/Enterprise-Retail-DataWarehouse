@@ -1,227 +1,163 @@
---Create first names
 USE EnterpriseRetailOLTP;
 GO
 
 /*==============================================================
-Table : FirstNames
+Project        : Enterprise Retail Data Warehouse
+Module         : Utility
+Script Name    : 02_Create_Lookup_Tables.sql
+Description    : Creates lookup tables used for sample data generation.
+Author         : Koteswararao Ponnada
 ==============================================================*/
 
-TRUNCATE TABLE Utility.FirstNames;
+--------------------------------------------------------------
+-- First Names
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.FirstNames','U') IS NOT NULL
+    DROP TABLE Utility.FirstNames;
 GO
 
-INSERT INTO Utility.FirstNames (FirstName)
-VALUES
-('Aarav'),
-('Vivaan'),
-('Aditya'),
-('Arjun'),
-('Sai'),
-('Krishna'),
-('Rahul'),
-('Kiran'),
-('Rohit'),
-('Vijay'),
-('Ajay'),
-('Akash'),
-('Amit'),
-('Anil'),
-('Ankit'),
-('Ashwin'),
-('Bharath'),
-('Chaitanya'),
-('Deepak'),
-('Ganesh'),
-('Harish'),
-('Karthik'),
-('Lokesh'),
-('Manoj'),
-('Mohan'),
-('Naveen'),
-('Nikhil'),
-('Pradeep'),
-('Rakesh'),
-('Ravi'),
-('Sandeep'),
-('Santosh'),
-('Srinivas'),
-('Suresh'),
-('Tarun'),
-('Uday'),
-('Varun'),
-('Venkat'),
-('Vikram'),
-('Yash'),
-('Abhishek'),
-('Gopal'),
-('Dinesh'),
-('Mahesh'),
-('Naresh'),
-('Pavan'),
-('Raghu'),
-('Ramesh'),
-('Srikanth'),
-('Teja'),
-('Ananya'),
-('Priya'),
-('Sneha'),
-('Pooja'),
-('Divya'),
-('Neha'),
-('Kavya'),
-('Aishwarya'),
-('Bhavana'),
-('Deepika'),
-('Harini'),
-('Keerthi'),
-('Lakshmi'),
-('Meghana'),
-('Nandini'),
-('Pallavi'),
-('Preethi'),
-('Radhika'),
-('Sanjana'),
-('Shreya'),
-('Swathi'),
-('Vaishnavi'),
-('Akshara'),
-('Amrutha'),
-('Anusha'),
-('Aparna'),
-('Archana'),
-('Bhavya'),
-('Chandana'),
-('Harika'),
-('Ishita'),
-('Jyothi'),
-('Komal'),
-('Madhavi'),
-('Monika'),
-('Navya'),
-('Nikita'),
-('Pranathi'),
-('Reshma'),
-('Sowmya'),
-('Sravani'),
-('Sushma'),
-('Trisha'),
-('Uma'),
-('Varsha'),
-('Vidya'),
-('Yamini'),
-('Zoya'),
-('Tanvi'),
-('Mansi');
+CREATE TABLE Utility.FirstNames
+(
+    FirstNameID INT IDENTITY(1,1) PRIMARY KEY,
+    FirstName NVARCHAR(100) NOT NULL
+);
 GO
 
---create last names
-/*==============================================================
-Table : LastNames
-==============================================================*/
+--------------------------------------------------------------
+-- Last Names
+--------------------------------------------------------------
 
-TRUNCATE TABLE Utility.LastNames;
+IF OBJECT_ID('Utility.LastNames','U') IS NOT NULL
+    DROP TABLE Utility.LastNames;
 GO
 
-INSERT INTO Utility.LastNames (LastName)
-VALUES
-('Sharma'),
-('Reddy'),
-('Kumar'),
-('Patel'),
-('Gupta'),
-('Rao'),
-('Singh'),
-('Verma'),
-('Naidu'),
-('Iyer'),
-('Das'),
-('Mishra'),
-('Yadav'),
-('Joshi'),
-('Choudhary'),
-('Kapoor'),
-('Mehta'),
-('Agarwal'),
-('Nair'),
-('Ponnada'),
-('Babu'),
-('Rana'),
-('Saxena'),
-('Malhotra'),
-('Kulkarni'),
-('Shukla'),
-('Tripathi'),
-('Dubey'),
-('Pandey'),
-('Bhatt'),
-('Shetty'),
-('Pillai'),
-('Menon'),
-('George'),
-('Thomas'),
-('Mathew'),
-('Fernandes'),
-('D''Souza'),
-('Prasad'),
-('Murthy'),
-('Raju'),
-('Chandra'),
-('Varma'),
-('Rathore'),
-('Chauhan'),
-('Bhat'),
-('Kuldeep'),
-('Desai'),
-('Gowda'),
-('Kamble'),
-('Jain'),
-('Soni'),
-('Khanna'),
-('Bose'),
-('Roy'),
-('Sen'),
-('Paul'),
-('Banerjee'),
-('Mukherjee'),
-('Ghosh'),
-('Chakraborty'),
-('Mohanty'),
-('Behera'),
-('Swain'),
-('Rout'),
-('Panda'),
-('Parida'),
-('Nayak'),
-('Acharya'),
-('Sahoo'),
-('Tiwari'),
-('Chawla'),
-('Bansal'),
-('Arora'),
-('Kohli'),
-('Gill'),
-('Sandhu'),
-('Dhillon'),
-('Sidhu'),
-('Kaur'),
-('Ahuja'),
-('Bakshi'),
-('Seth'),
-('Lal'),
-('Srinivas'),
-('Venkatesh'),
-('Subramanian'),
-('Narayanan'),
-('Balaji'),
-('Krishnan'),
-('Ramakrishnan'),
-('Perumal'),
-('Selvam'),
-('Kannan'),
-('Moorthy'),
-('Ranganathan'),
-('Anand'),
-('Bhaskar'),
-('Prabhakar'),
-('Rajput');
+CREATE TABLE Utility.LastNames
+(
+    LastNameID INT IDENTITY(1,1) PRIMARY KEY,
+    LastName NVARCHAR(100) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- Email Domains
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.EmailDomains','U') IS NOT NULL
+    DROP TABLE Utility.EmailDomains;
+GO
+
+CREATE TABLE Utility.EmailDomains
+(
+    DomainID INT IDENTITY(1,1) PRIMARY KEY,
+    DomainName NVARCHAR(100) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- Job Titles
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.JobTitles','U') IS NOT NULL
+    DROP TABLE Utility.JobTitles;
+GO
+
+CREATE TABLE Utility.JobTitles
+(
+    JobTitleID INT IDENTITY(1,1) PRIMARY KEY,
+    JobTitle NVARCHAR(100) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- Courier Companies
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.CourierNames','U') IS NOT NULL
+    DROP TABLE Utility.CourierNames;
+GO
+
+CREATE TABLE Utility.CourierNames
+(
+    CourierID INT IDENTITY(1,1) PRIMARY KEY,
+    CourierName NVARCHAR(100) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- Supplier Companies
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.SupplierNames','U') IS NOT NULL
+    DROP TABLE Utility.SupplierNames;
+GO
+
+CREATE TABLE Utility.SupplierNames
+(
+    SupplierID INT IDENTITY(1,1) PRIMARY KEY,
+    SupplierName NVARCHAR(150) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- Product Models
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.ProductModels','U') IS NOT NULL
+    DROP TABLE Utility.ProductModels;
+GO
+
+CREATE TABLE Utility.ProductModels
+(
+    ProductModelID INT IDENTITY(1,1) PRIMARY KEY,
+    BrandName NVARCHAR(100) NOT NULL,
+    CategoryName NVARCHAR(100) NOT NULL,
+    ProductModel NVARCHAR(150) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- Product Colors
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.ProductColors','U') IS NOT NULL
+    DROP TABLE Utility.ProductColors;
+GO
+
+CREATE TABLE Utility.ProductColors
+(
+    ColorID INT IDENTITY(1,1) PRIMARY KEY,
+    ColorName NVARCHAR(50) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- RAM Sizes
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.RAMSizes','U') IS NOT NULL
+    DROP TABLE Utility.RAMSizes;
+GO
+
+CREATE TABLE Utility.RAMSizes
+(
+    RAMID INT IDENTITY(1,1) PRIMARY KEY,
+    RAMSize NVARCHAR(30) NOT NULL
+);
+GO
+
+--------------------------------------------------------------
+-- Storage Sizes
+--------------------------------------------------------------
+
+IF OBJECT_ID('Utility.StorageSizes','U') IS NOT NULL
+    DROP TABLE Utility.StorageSizes;
+GO
+
+CREATE TABLE Utility.StorageSizes
+(
+    StorageID INT IDENTITY(1,1) PRIMARY KEY,
+    StorageSize NVARCHAR(30) NOT NULL
+);
 GO
 
