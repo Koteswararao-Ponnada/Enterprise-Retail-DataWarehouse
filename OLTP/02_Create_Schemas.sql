@@ -67,5 +67,12 @@ IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'Stage')
     EXEC('CREATE SCHEMA Stage');
 GO
 
+------------------------------------------------------------
+-- Reference Schema
+------------------------------------------------------------
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'Reference')
+    EXEC('CREATE SCHEMA Reference');
+GO
+
 PRINT 'All Schemas Created Successfully.';
 GO
