@@ -1,6 +1,12 @@
+USE EnterpriseRetailOLTP;
+GO
+
+
 /*==============================================================
 Table : FirstNames
 ==============================================================*/
+TRUNCATE TABLE Utility.EmailDomains;
+GO
 
 INSERT INTO Utility.FirstNames (FirstName)
 VALUES
@@ -104,3 +110,4 @@ VALUES
 ('Zoya'),
 ('Tanvi'),
 ('Mansi');
+GO
