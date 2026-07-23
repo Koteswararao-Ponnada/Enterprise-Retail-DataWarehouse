@@ -94,8 +94,8 @@ GO
 
 CREATE TABLE Utility.SupplierNames
 (
-    SupplierID INT IDENTITY(1,1) PRIMARY KEY,
-    SupplierName NVARCHAR(150) NOT NULL
+    SupplierCompanyID INT IDENTITY(1,1) PRIMARY KEY,
+    CompanyName NVARCHAR(150) NOT NULL
 );
 GO
 
